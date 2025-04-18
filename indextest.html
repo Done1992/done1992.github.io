@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo Konfigurator</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    label, select { display: block; margin: 10px 0; }
+  </style>
+</head>
+<body>
+  <h1>Test: PC Konfigurator</h1>
+  <div>
+    <label for="cpuHersteller">Prozessor-Hersteller:</label>
+    <select id="cpuHersteller">
+      <option value="">Bitte wählen</option>
+    </select>
+  </div>
+
+  <script>
+    alert("JS geladen!");
+
+    fetch("artikel.json")
+      .then(response => {
+        if (!response.ok) throw new Error("Fehler beim Laden der artikel.json");
+        return response.json();
+      })
+      .then(data => {
+        alert("artikel.json geladen");
+        const dropdown = document.getElementById("cpuHersteller");
+        data.prozessorHersteller.forEach(opt => {
+          const option = document.createElement("option");
+          option.value = opt.name;
+          option.textContent = opt.name + " (" + opt.preis + " €)";
+          dropdown.appendChild(option);
+        });
+      })
+      .catch(error => {
+        alert("Fehler: " + error.message);
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
