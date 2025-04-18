@@ -180,6 +180,58 @@
     });
 
     ladeDaten();
+
+    // Speichern in localStorage
+document.getElementById("saveBtn").addEventListener("click", () => {
+  const config = {
+    auswahl: auswahl,
+    preise: preise
+  };
+  localStorage.setItem("pc_konfiguration", JSON.stringify(config));
+  alert("Konfiguration gespeichert!");
+});
+
+// Teilen-Link erzeugen
+document.getElementById("shareBtn").addEventListener("click", () => {
+  const config = {
+    auswahl: auswahl,
+    preise: preise
+  };
+  const encoded = btoa(JSON.stringify(config));
+  const url = `${window.location.origin}${window.location.pathname}?config=${encoded}`;
+  const input = document.getElementById("shareUrl");
+  input.value = url;
+  input.style.display = "block";
+  input.select();
+  document.execCommand("copy");
+  alert("Link kopiert!");
+});
+
+// Laden bei Seitenaufruf (wenn ?config=... vorhanden)
+function ladeVonUrl() {
+  const params = new URLSearchParams(window.location.search);
+  const encoded = params.get("config");
+  if (encoded) {
+    try {
+      const decoded = JSON.parse(atob(encoded));
+      auswahl = decoded.auswahl || {};
+      preise = decoded.preise || {};
+      komponentenReihenfolge.forEach(k => {
+        const select = document.getElementById(k);
+        const option = Array.from(select.options).find(o => o.text.startsWith(auswahl[k]));
+        if (option) {
+          select.value = option.value;
+          document.getElementById(`preis-${k}`).innerText = `Preis: ${preise[k]} €`;
+        }
+      });
+      updateGesamtpreis();
+    } catch (e) {
+      console.error("Fehler beim Laden der Konfiguration:", e);
+    }
+  }
+}
+
+window.onload = ladeVonUrl;
   </script>
 </body>
 </html>
