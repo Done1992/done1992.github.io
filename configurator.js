@@ -1,5 +1,5 @@
 
-// configurator.js – vollständige Version mit PDF-Export und Teilen-Funktion
+// configurator.js – Safari-kompatibel mit statischem jsPDF-Import
 
 const komponenten = ["prozessorHersteller", "cpu", "mainboard", "ram", "nvme", "lüfter", "gehäuse", "netzteil", "grafikkarte", "wlan", "betriebssystem"];
 let daten = {};
@@ -100,20 +100,17 @@ function ladeVonUrl() {
   }
 }
 
-import("https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js").then(jsPDFModule => {
-  const { jsPDF } = jsPDFModule;
-
-  document.getElementById("downloadPdfBtn").addEventListener("click", () => {
-    const doc = new jsPDF();
-    doc.text("PC-Konfiguration", 10, 10);
-    let y = 20;
-    komponenten.forEach(k => {
-      doc.text(`${k}: ${auswahl[k]} (${preise[k]} €)`, 10, y);
-      y += 10;
-    });
-    doc.text(`Gesamt: ${Object.values(preise).reduce((a, b) => a + b, 0)} €`, 10, y + 10);
-    doc.save("pc-konfiguration.pdf");
+document.getElementById("downloadPdfBtn").addEventListener("click", () => {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  doc.text("PC-Konfiguration", 10, 10);
+  let y = 20;
+  komponenten.forEach(k => {
+    doc.text(`${k}: ${auswahl[k]} (${preise[k]} €)`, 10, y);
+    y += 10;
   });
+  doc.text(`Gesamt: ${Object.values(preise).reduce((a, b) => a + b, 0)} €`, 10, y + 10);
+  doc.save("pc-konfiguration.pdf");
 });
 
 ladeDaten();
