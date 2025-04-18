@@ -56,7 +56,7 @@
       cursor: pointer;
       margin-top: 20px;
     }
-
+    
     @media (max-width: 600px) {
       body {
         margin: 10px;
@@ -163,6 +163,10 @@
       doc.setFontSize(14);
       doc.text("Ihre PC-Konfiguration", 10, y);
       y += 10;
+
+      <button type="button" id="saveBtn">Konfiguration speichern</button>
+<button type="button" id="shareBtn">Teilen-Link kopieren</button>
+<input type="text" id="shareUrl" readonly style="width:100%; margin-top:10px; display:none;">
 
       komponentenReihenfolge.forEach(k => {
         doc.setFontSize(12);
