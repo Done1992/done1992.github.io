@@ -1,196 +1,181 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Produkte – Fuego Electronics</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
-    <style>
-          body, html {
-      margin: 0;
-      padding: 0;
-      font-family: 'Roboto', sans-serif;
-      scroll-behavior: smooth;
-      background-color: #121212;
-      color: #ffffff;
-    }
-
-    header {
-      padding: 2rem;
-      text-align: center;
-      background-color: #1d1d1d;
-    }
-
-    header img {
-      max-width: 120px;
-      margin-bottom: 1rem;
-    }
-
-    header h1 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.5rem;
-      margin: 0;
-    }
-
-    nav {
-      text-align: center;
-      background-color: #1a1a1a;
-      padding: 1rem 0;
-    }
-
-    nav a {
-      color: #ffffff;
-      text-decoration: none;
-      margin: 0 1rem;
-      font-weight: bold;
-    }
-
-    .parallax {
-      height: 100vh;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-
-    .content-section {
-      padding: 4rem 2rem;
-      background-color: #1d1d1d;
-      text-align: center;
-    }
-
-    .content-section h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .content-section p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.2rem;
-      color: #cccccc;
-    }
-
-    footer {
-      background-color: #1a1a1a;
-      text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
-      color: #888;
-    }
-    :root {
-      --bg-color: #121212;
-      --text-color: #f5f5f5;
-      --accent: #E63946;
-      --secondary: #1D1D1D;
-      --button-bg: #E63946;
-      --button-hover: #FF6B6B;
-    }
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+  <meta charset="UTF-8">
+  <title>PC-Konfigurator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
     body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
+      font-family: sans-serif;
+      margin: 20px;
+      background: #f0f0f5;
+      color: #333;
     }
-    header {
-      background-color: var(--secondary);
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+
+    .feldgruppe {
+      background: #fff;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
-    header img {
-      height: 50px;
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
     }
-    nav a {
-      color: var(--text-color);
-      margin-left: 1.5rem;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s;
+
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
     }
-    nav a:hover {
-      color: var(--accent);
+
+    .preisfeld {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 2px;
     }
-    .hero {
-      background: linear-gradient(to right, #1D1D1D, #222);
-      padding: 5rem 2rem;
-      text-align: center;
+
+    .gesamtpreis {
+      font-size: 1.2em;
+      font-weight: bold;
+      color: #007700;
+      margin-top: 30px;
     }
-    .hero h1 {
-      font-size: 3.5rem;
-      font-family: 'Montserrat', sans-serif;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto 2rem;
-    }
-    .cta-button {
-      background-color: var(--button-bg);
-      color: #fff;
+
+    #pdfBtn {
+      padding: 10px 20px;
+      background: #007700;
+      color: white;
       border: none;
-      padding: 1rem 2rem;
-      font-size: 1rem;
+      border-radius: 4px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      margin-top: 20px;
     }
-    .cta-button:hover {
-      background-color: var(--button-hover);
-    }
-    section {
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-    section h2 {
-      font-family: 'Montserrat', sans-serif;
-      margin-bottom: 1rem;
-      font-size: 2.5rem;
-    }
-    footer {
-      background-color: var(--secondary);
-      padding: 1rem;
-      text-align: center;
-      color: var(--text-color);
-      margin-top: 4rem;
+
+    @media (max-width: 600px) {
+      body {
+        margin: 10px;
+      }
+
+      h1 {
+        font-size: 1.4em;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Fuego Electronics Logo">
-    <nav>
-      <a href="../produkte.html">Produkte</a>
-      <a href="../ueber-uns.html">Über uns</a>
-      <a href="#">Support</a>
-      <a href="../kontakt.html">Kontakt</a>
-    </nav>
-  </header>
-  
-  <h1>Unsere Computersysteme</h1>
+  <h1>PC-Konfigurator</h1>
 
-  <div class="parallax">
-    <h2>Fuego Server Pro</h2>
-    <p>Maximale Leistung für Rechenzentren und Unternehmen. Skalierbar, effizient und zuverlässig.</p>
-  </div>
+  <form id="konfiguratorForm">
+    <div class="feldgruppe" id="felder">
+      <!-- Dropdowns werden hier dynamisch eingefügt -->
+    </div>
 
-  <div class="parallax">
-    <h2>Fuego Workstation X</h2>
-    <p>Ideal für Entwickler, Designer und Kreative. Hohe Rechenleistung trifft auf leises Design.</p>
-  </div>
+    <div class="gesamtpreis">Gesamtpreis: <span id="gesamt">0.00</span> €</div>
+    <button type="button" id="pdfBtn">Konfiguration als PDF herunterladen</button>
+  </form>
 
-  <div class="parallax">
-    <h2>Fuego Notebook Ultra</h2>
-    <p>Mobiles Arbeiten in Perfektion – schlankes Design, starke Performance und lange Akkulaufzeit.</p>
-  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    const komponentenReihenfolge = [
+      "hersteller", "cpu", "mainboard", "gehaeuse", "netzteil", "grafikkarte",
+      "ram", "nvme", "luefter", "wlan", "os"
+    ];
+
+    const bezeichnungen = {
+      hersteller: "Prozessorhersteller",
+      cpu: "Prozessor",
+      mainboard: "Mainboard",
+      gehaeuse: "Gehäuse",
+      netzteil: "Netzteil",
+      grafikkarte: "Grafikkarte",
+      ram: "Arbeitsspeicher (RAM)",
+      nvme: "NVMe SSD",
+      luefter: "Gehäuselüfter",
+      wlan: "WLAN-Karte",
+      os: "Betriebssystem"
+    };
+
+    let daten, preise = {}, auswahl = {};
+
+    async function ladeDaten() {
+      const res = await fetch('artikel.json');
+      daten = await res.json();
+
+      const container = document.getElementById("felder");
+
+      komponentenReihenfolge.forEach(komponente => {
+        const div = document.createElement("div");
+        div.innerHTML = `
+          <label for="${komponente}">${bezeichnungen[komponente]}:</label>
+          <select id="${komponente}"></select>
+          <div class="preisfeld" id="preis-${komponente}"></div>
+        `;
+        container.appendChild(div);
+      });
+
+      fuelleDropdowns();
+    }
+
+    function fuelleDropdowns() {
+      komponentenReihenfolge.forEach(k => {
+        const select = document.getElementById(k);
+        const gruppe = daten[k] || [];
+        select.innerHTML = "";
+
+        gruppe.forEach(opt => {
+          const option = new Option(`${opt.name} (${opt.preis} €)`, opt.id);
+          if (opt.standard) option.selected = true;
+          select.appendChild(option);
+        });
+
+        select.addEventListener("change", () => {
+          const selected = gruppe.find(g => g.id === select.value);
+          auswahl[k] = selected?.name || "";
+          preise[k] = selected?.preis || 0;
+          document.getElementById(`preis-${k}`).innerText = selected ? `Preis: ${selected.preis} €` : "";
+          updateGesamtpreis();
+        });
+
+        const selected = gruppe.find(g => g.id === select.value || g.standard);
+        auswahl[k] = selected?.name || "";
+        preise[k] = selected?.preis || 0;
+        document.getElementById(`preis-${k}`).innerText = selected ? `Preis: ${selected.preis} €` : "";
+      });
+
+      updateGesamtpreis();
+    }
+
+    function updateGesamtpreis() {
+      const gesamt = Object.values(preise).reduce((a, b) => a + b, 0);
+      document.getElementById("gesamt").innerText = gesamt.toFixed(2);
+    }
+
+    document.getElementById("pdfBtn").addEventListener("click", () => {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      let y = 10;
+      doc.setFontSize(14);
+      doc.text("Ihre PC-Konfiguration", 10, y);
+      y += 10;
+
+      komponentenReihenfolge.forEach(k => {
+        doc.setFontSize(12);
+        doc.text(`${bezeichnungen[k]}: ${auswahl[k]} (${preise[k]} €)`, 10, y);
+        y += 8;
+      });
+
+      doc.setFontSize(14);
+      doc.text(`Gesamtpreis: ${Object.values(preise).reduce((a, b) => a + b, 0).toFixed(2)} €`, 10, y + 5);
+      doc.save("pc-konfiguration.pdf");
+    });
+
+    ladeDaten();
+  </script>
 </body>
 </html>
