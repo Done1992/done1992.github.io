@@ -1,44 +1,158 @@
-
 {
   "hersteller": [
-    { "name": "Intel", "preis": 0 },
-    { "name": "AMD", "preis": 0 }
+    {
+      "name": "Intel",
+      "preis": 0
+    },
+    {
+      "name": "AMD",
+      "preis": 0
+    }
   ],
   "cpu": [
-    { "name": "Intel Core i5", "preis": 180 },
-    { "name": "AMD Ryzen 5", "preis": 160 }
+    {
+      "name": "Intel Core i5-13600K",
+      "preis": 260,
+      "hersteller": "Intel",
+      "sockel": "LGA1700",
+      "ramTyp": "DDR5"
+    },
+    {
+      "name": "Intel Core i7-14700K",
+      "preis": 390,
+      "hersteller": "Intel",
+      "sockel": "LGA1700",
+      "ramTyp": "DDR5"
+    },
+    {
+      "name": "AMD Ryzen 5 7600",
+      "preis": 220,
+      "hersteller": "AMD",
+      "sockel": "AM5",
+      "ramTyp": "DDR5"
+    },
+    {
+      "name": "AMD Ryzen 7 7800X3D",
+      "preis": 420,
+      "hersteller": "AMD",
+      "sockel": "AM5",
+      "ramTyp": "DDR5"
+    }
   ],
   "mainboard": [
-    { "name": "MSI B550", "preis": 120 },
-    { "name": "ASUS Z790", "preis": 180 }
+    {
+      "name": "ASUS ROG Strix B650-A (AM5, DDR5)",
+      "preis": 210,
+      "sockel": "AM5",
+      "ramTyp": "DDR5"
+    },
+    {
+      "name": "MSI PRO B650M-P (AM5, DDR5)",
+      "preis": 140,
+      "sockel": "AM5",
+      "ramTyp": "DDR5"
+    },
+    {
+      "name": "ASUS Prime Z790-P (LGA1700, DDR5)",
+      "preis": 200,
+      "sockel": "LGA1700",
+      "ramTyp": "DDR5"
+    },
+    {
+      "name": "Gigabyte Z790 AORUS Elite (LGA1700, DDR5)",
+      "preis": 220,
+      "sockel": "LGA1700",
+      "ramTyp": "DDR5"
+    }
   ],
   "ram": [
-    { "name": "16GB DDR4", "preis": 60 },
-    { "name": "32GB DDR5", "preis": 120 }
+    {
+      "name": "16GB DDR5-6000",
+      "preis": 75,
+      "ramTyp": "DDR5"
+    },
+    {
+      "name": "32GB DDR5-6000",
+      "preis": 130,
+      "ramTyp": "DDR5"
+    }
   ],
   "nvme": [
-    { "name": "1TB NVMe", "preis": 80 },
-    { "name": "2TB NVMe", "preis": 140 }
+    {
+      "name": "1TB Samsung 980 Pro",
+      "preis": 90
+    },
+    {
+      "name": "2TB Crucial P5 Plus",
+      "preis": 140
+    }
   ],
   "gehaeuse": [
-    { "name": "BeQuiet Pure Base", "preis": 90 }
+    {
+      "name": "be quiet! Pure Base 500DX",
+      "preis": 95
+    },
+    {
+      "name": "Fractal Design Meshify C",
+      "preis": 99
+    }
   ],
   "netzteil": [
-    { "name": "600W Bronze", "preis": 70 }
+    {
+      "name": "be quiet! Pure Power 12M 750W",
+      "preis": 110
+    },
+    {
+      "name": "Corsair RM850e 850W",
+      "preis": 125
+    }
   ],
   "grafikkarte": [
-    { "name": "NVIDIA RTX 4060", "preis": 300 },
-    { "name": "keine", "preis": 0 }
+    {
+      "name": "NVIDIA GeForce RTX 4060 Ti",
+      "preis": 380
+    },
+    {
+      "name": "AMD Radeon RX 7800 XT",
+      "preis": 500
+    },
+    {
+      "name": "Keine Grafikkarte (nur iGPU)",
+      "preis": 0
+    }
   ],
   "luefter": [
-    { "name": "Arctic F12", "preis": 10 }
+    {
+      "name": "ARCTIC Freezer 34 eSports",
+      "preis": 35
+    },
+    {
+      "name": "be quiet! Dark Rock 4",
+      "preis": 70
+    }
   ],
   "wlan": [
-    { "name": "Intel AX200", "preis": 30 },
-    { "name": "keine", "preis": 0 }
+    {
+      "name": "Intel Wi-Fi 6 AX200",
+      "preis": 35
+    },
+    {
+      "name": "Kein WLAN",
+      "preis": 0
+    }
   ],
   "os": [
-    { "name": "Windows 11 Home", "preis": 110 },
-    { "name": "kein OS", "preis": 0 }
+    {
+      "name": "Windows 11 Home",
+      "preis": 120
+    },
+    {
+      "name": "Windows 11 Pro",
+      "preis": 150
+    },
+    {
+      "name": "Kein Betriebssystem",
+      "preis": 0
+    }
   ]
 }
