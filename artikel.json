@@ -1,39 +1,14 @@
+
 {
-  "hersteller": [
-    { "id": "intel", "name": "Intel", "preis": 0, "standard": true },
-    { "id": "amd", "name": "AMD", "preis": 0 }
-  ],
-  "cpu": [
-    { "id": "i5", "name": "Intel Core i5", "preis": 180, "standard": true },
-    { "id": "i7", "name": "Intel Core i7", "preis": 270 }
-  ],
-  "mainboard": [
-    { "id": "b660", "name": "ASUS B660", "preis": 120, "standard": true }
-  ],
-  "gehaeuse": [
-    { "id": "nzxt", "name": "NZXT H510", "preis": 85, "standard": true }
-  ],
-  "netzteil": [
-    { "id": "beq600", "name": "be quiet! 600W", "preis": 75, "standard": true }
-  ],
-  "grafikkarte": [
-    { "id": "rtx3060", "name": "NVIDIA RTX 3060", "preis": 340 }
-  ],
-  "ram": [
-    { "id": "16gb", "name": "16 GB DDR4", "preis": 65, "standard": true },
-    { "id": "32gb", "name": "32 GB DDR4", "preis": 110 }
-  ],
-  "nvme": [
-    { "id": "1tb", "name": "1 TB NVMe SSD", "preis": 95, "standard": true }
-  ],
-  "luefter": [
-    { "id": "silent", "name": "Silent Wings Lüfter", "preis": 25, "standard": true }
-  ],
-  "wlan": [
-    { "id": "ax200", "name": "Intel AX200 Wi-Fi 6", "preis": 30 }
-  ],
-  "os": [
-    { "id": "win11", "name": "Windows 11 Home", "preis": 120, "standard": true },
-    { "id": "linux", "name": "Linux (kostenlos)", "preis": 0 }
-  ]
+  "prozessorHersteller": [{"name": "Intel", "preis": 0}, {"name": "AMD", "preis": 0}],
+  "cpu": [{"name": "Intel Core i5", "preis": 180}, {"name": "AMD Ryzen 5", "preis": 170}],
+  "mainboard": [{"name": "ASUS Mainboard", "preis": 120}],
+  "ram": [{"name": "16GB DDR4", "preis": 60, "standard": true}],
+  "nvme": [{"name": "1TB NVMe SSD", "preis": 100, "standard": true}],
+  "lüfter": [{"name": "Standard CPU Lüfter", "preis": 20}],
+  "gehäuse": [{"name": "Mid Tower", "preis": 50}],
+  "netzteil": [{"name": "500W Netzteil", "preis": 55}],
+  "grafikkarte": [{"name": "NVIDIA GTX 1660", "preis": 250}],
+  "wlan": [{"name": "WLAN-Karte AC", "preis": 30}],
+  "betriebssystem": [{"name": "Windows 11 Home", "preis": 120}]
 }

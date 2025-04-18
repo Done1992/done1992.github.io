@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,17 +7,14 @@
   <title>PC Konfigurator</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="configurator.js"></script>
+  <script src="configurator-safari.js" defer></script>
 </head>
 <body>
   <h1>PC Konfigurator</h1>
   <div id="konfigurator-container"></div>
-
-  <button id="saveBtn">Konfiguration speichern</button>
-  <button id="shareBtn">Teilen-Link kopieren</button>
-  <input type="text" id="shareUrl" readonly style="width:100%; margin-top:10px; display:none;">
-  <button id="downloadPdfBtn">PDF herunterladen</button>
-
-  <script type="module" src="configurator.js"></script>
+  <p><button id="downloadPdfBtn">Konfiguration als PDF speichern</button></p>
+  <p><button id="saveBtn">Konfiguration speichern</button></p>
+  <p><button id="shareBtn">Teilen</button></p>
+  <input type="text" id="shareUrl" style="display:none; width: 100%;" readonly />
 </body>
 </html>
