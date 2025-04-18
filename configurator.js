@@ -1,3 +1,6 @@
+
+// configurator.js – vollständige Version mit PDF-Export und Teilen-Funktion
+
 const komponenten = ["prozessorHersteller", "cpu", "mainboard", "ram", "nvme", "lüfter", "gehäuse", "netzteil", "grafikkarte", "wlan", "betriebssystem"];
 let daten = {};
 let auswahl = {};
@@ -7,7 +10,7 @@ async function ladeDaten() {
   const res = await fetch('./artikel.json');
   daten = await res.json();
   baueDropdowns();
-  ladeVonUrl(); // nach Dropdown-Erstellung
+  ladeVonUrl();
 }
 
 function baueDropdowns() {
@@ -56,13 +59,11 @@ function updateGesamtpreis() {
   preisEl.textContent = `Gesamtpreis: ${gesamt} €`;
 }
 
-// Speichern lokal
 document.getElementById("saveBtn").addEventListener("click", () => {
   localStorage.setItem("pc_konfiguration", JSON.stringify({ auswahl, preise }));
   alert("Konfiguration gespeichert!");
 });
 
-// Teilen-Link
 document.getElementById("shareBtn").addEventListener("click", () => {
   const encoded = btoa(JSON.stringify({ auswahl, preise }));
   const url = `${window.location.origin}${window.location.pathname}?config=${encoded}`;
@@ -74,7 +75,6 @@ document.getElementById("shareBtn").addEventListener("click", () => {
   alert("Link kopiert!");
 });
 
-// Konfiguration aus URL laden
 function ladeVonUrl() {
   const params = new URLSearchParams(window.location.search);
   const encoded = params.get("config");
@@ -100,19 +100,20 @@ function ladeVonUrl() {
   }
 }
 
-// PDF generieren (mit jsPDF)
-import jsPDF from "https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.es.min.js";
+import("https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js").then(jsPDFModule => {
+  const { jsPDF } = jsPDFModule;
 
-document.getElementById("downloadPdfBtn").addEventListener("click", () => {
-  const doc = new jsPDF();
-  doc.text("PC-Konfiguration", 10, 10);
-  let y = 20;
-  komponenten.forEach(k => {
-    doc.text(`${k}: ${auswahl[k]} (${preise[k]} €)`, 10, y);
-    y += 10;
+  document.getElementById("downloadPdfBtn").addEventListener("click", () => {
+    const doc = new jsPDF();
+    doc.text("PC-Konfiguration", 10, 10);
+    let y = 20;
+    komponenten.forEach(k => {
+      doc.text(`${k}: ${auswahl[k]} (${preise[k]} €)`, 10, y);
+      y += 10;
+    });
+    doc.text(`Gesamt: ${Object.values(preise).reduce((a, b) => a + b, 0)} €`, 10, y + 10);
+    doc.save("pc-konfiguration.pdf");
   });
-  doc.text(`Gesamt: ${Object.values(preise).reduce((a, b) => a + b, 0)} €`, 10, y + 10);
-  doc.save("pc-konfiguration.pdf");
 });
 
 ladeDaten();
