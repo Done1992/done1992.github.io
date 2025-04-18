@@ -1,7 +1,44 @@
 
 {
-  "prozessorHersteller": [
+  "hersteller": [
     { "name": "Intel", "preis": 0 },
     { "name": "AMD", "preis": 0 }
+  ],
+  "cpu": [
+    { "name": "Intel Core i5", "preis": 180 },
+    { "name": "AMD Ryzen 5", "preis": 160 }
+  ],
+  "mainboard": [
+    { "name": "MSI B550", "preis": 120 },
+    { "name": "ASUS Z790", "preis": 180 }
+  ],
+  "ram": [
+    { "name": "16GB DDR4", "preis": 60 },
+    { "name": "32GB DDR5", "preis": 120 }
+  ],
+  "nvme": [
+    { "name": "1TB NVMe", "preis": 80 },
+    { "name": "2TB NVMe", "preis": 140 }
+  ],
+  "gehaeuse": [
+    { "name": "BeQuiet Pure Base", "preis": 90 }
+  ],
+  "netzteil": [
+    { "name": "600W Bronze", "preis": 70 }
+  ],
+  "grafikkarte": [
+    { "name": "NVIDIA RTX 4060", "preis": 300 },
+    { "name": "keine", "preis": 0 }
+  ],
+  "luefter": [
+    { "name": "Arctic F12", "preis": 10 }
+  ],
+  "wlan": [
+    { "name": "Intel AX200", "preis": 30 },
+    { "name": "keine", "preis": 0 }
+  ],
+  "os": [
+    { "name": "Windows 11 Home", "preis": 110 },
+    { "name": "kein OS", "preis": 0 }
   ]
 }

@@ -10,13 +10,61 @@
 </head>
 <body>
   <h1>PC Konfigurator</h1>
-  <div id="konfigurator-container"></div>
-  <p><button id="downloadPdfBtn">Konfiguration als PDF speichern</button></p>
-  <p><button id="saveBtn">Konfiguration speichern</button></p>
-  <p><button id="shareBtn">Teilen</button></p>
-  <input type="text" id="shareUrl" style="display:none; width: 100%;" readonly />
-
-  <!-- Jetzt wird das Script am Ende des Bodys geladen -->
-  <script src="configurator-safari.js"></script>
+  <form id="konfiguratorForm">
+    <div class="gruppe">
+      <label for="hersteller">Prozessor-Hersteller:</label>
+      <select id="hersteller" name="hersteller"></select>
+    </div>
+    <div class="gruppe">
+      <label for="cpu">CPU:</label>
+      <select id="cpu" name="cpu"></select>
+    </div>
+    <div class="gruppe">
+      <label for="mainboard">Mainboard:</label>
+      <select id="mainboard" name="mainboard"></select>
+    </div>
+    <div class="gruppe">
+      <label for="ram">RAM:</label>
+      <select id="ram" name="ram"></select>
+    </div>
+    <div class="gruppe">
+      <label for="nvme">NVMe:</label>
+      <select id="nvme" name="nvme"></select>
+    </div>
+    <div class="gruppe">
+      <label for="gehaeuse">Gehäuse:</label>
+      <select id="gehaeuse" name="gehaeuse"></select>
+    </div>
+    <div class="gruppe">
+      <label for="netzteil">Netzteil:</label>
+      <select id="netzteil" name="netzteil"></select>
+    </div>
+    <div class="gruppe">
+      <label for="grafikkarte">Grafikkarte:</label>
+      <select id="grafikkarte" name="grafikkarte"></select>
+    </div>
+    <div class="gruppe">
+      <label for="luefter">Lüfter:</label>
+      <select id="luefter" name="luefter"></select>
+    </div>
+    <div class="gruppe">
+      <label for="wlan">WLAN-Karte:</label>
+      <select id="wlan" name="wlan"></select>
+    </div>
+    <div class="gruppe">
+      <label for="os">Betriebssystem:</label>
+      <select id="os" name="os"></select>
+    </div>
+    <div class="gruppe">
+      <strong>Gesamtpreis: <span id="gesamtpreis">0</span> €</strong>
+    </div>
+    <div class="buttons">
+      <button type="button" onclick="downloadPDF()">Konfiguration als PDF</button>
+      <button type="button" onclick="saveConfig()">Speichern</button>
+      <button type="button" onclick="shareConfig()">Teilen</button>
+      <input type="text" id="shareUrl" readonly style="display:none; width: 100%;" />
+    </div>
+  </form>
+  <script src="konfigurator.js"></script>
 </body>
 </html>
