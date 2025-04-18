@@ -7,7 +7,6 @@
   <title>PC Konfigurator</title>
   <link rel="stylesheet" href="style.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="configurator-safari.js" defer></script>
 </head>
 <body>
   <h1>PC Konfigurator</h1>
@@ -16,5 +15,8 @@
   <p><button id="saveBtn">Konfiguration speichern</button></p>
   <p><button id="shareBtn">Teilen</button></p>
   <input type="text" id="shareUrl" style="display:none; width: 100%;" readonly />
+
+  <!-- Jetzt wird das Script am Ende des Bodys geladen -->
+  <script src="configurator-safari.js"></script>
 </body>
 </html>
