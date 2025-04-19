@@ -19,8 +19,11 @@ document.addEventListener("DOMContentLoaded", () => {
             };
 
             data.forEach(artikel => {
-                if (artikel.kategorie === "hersteller") kategorien.hersteller.add(artikel.name);
-                if (kategorien[artikel.kategorie]) kategorien[artikel.kategorie].push(artikel);
+                if (artikel.kategorie === "hersteller") {
+                    kategorien.hersteller.add(artikel.name);
+                } else if (kategorien[artikel.kategorie]) {
+                    kategorien[artikel.kategorie].push(artikel);
+                }
             });
 
             kategorien.hersteller.forEach(h => {
@@ -30,7 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
             herstellerSelect.addEventListener("change", () => {
                 const selected = herstellerSelect.value;
                 cpuSelect.innerHTML = "<option value=''>Bitte wählen</option>";
-                kategorien.cpu.filter(cpu => cpu.hersteller === selected)
+                kategorien.cpu
+                    .filter(cpu => cpu.hersteller === selected)
                     .forEach(cpu => {
                         cpuSelect.innerHTML += `<option value="${cpu.name}">${cpu.name}</option>`;
                     });
