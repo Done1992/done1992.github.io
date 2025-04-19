@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const osSelect = document.getElementById("os");
   const wlanSelect = document.getElementById("wlan");
 
-  fetch("data/artikel.json")
+  fetch("./artikel.json")
     .then((response) => response.json())
     .then((data) => {
       const artikel = data.artikel;
