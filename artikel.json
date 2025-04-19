@@ -11,4 +11,14 @@
     { "kategorie": "nvme", "name": "2TB WD Black SN850X" },
     { "kategorie": "grafikkarte", "name": "NVIDIA RTX 4070" },
     { "kategorie": "grafikkarte", "name": "AMD Radeon RX 7800 XT" }
+    { "kategorie": "cpu", "name": "Intel Core i7-13700K", "hersteller": "Intel", "socket": "LGA1700" },
+    { "kategorie": "cpu", "name": "AMD Ryzen 7 7700X", "hersteller": "AMD", "socket": "AM5" },
+    { "kategorie": "mainboard", "name": "GIGABYTE Z790UD", "kompatibel_mit": ["LGA1700"] },
+    { "kategorie": "mainboard", "name": "ASrock X670E Taichi", "kompatibel_mit": ["AM5"] },
+    { "kategorie": "ram", "name": "64GB DDR5-6000 KINGSTON" },
+    { "kategorie": "ram", "name": "32GB DDR5-6000 Crucial" },
+    { "kategorie": "nvme", "name": "1TB Samsung 990 Pro" },
+    { "kategorie": "nvme", "name": "4TB WD Black SN850X" },
+    { "kategorie": "grafikkarte", "name": "NVIDIA RTX 4080" },
+    { "kategorie": "grafikkarte", "name": "AMD Radeon RX 7900 XT" }
 ]
