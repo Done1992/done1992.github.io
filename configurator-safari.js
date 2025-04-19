@@ -1,4 +1,4 @@
-alert("JS geladen!");
+document.addEventListener("DOMContentLoaded", function () {
 // configurator.js – Safari-kompatibel mit statischem jsPDF-Import
 
 const komponenten = ["prozessorHersteller", "cpu", "mainboard", "ram", "nvme", "lüfter", "gehäuse", "netzteil", "grafikkarte", "wlan", "betriebssystem"];
@@ -114,3 +114,5 @@ document.getElementById("downloadPdfBtn").addEventListener("click", () => {
 });
 
 ladeDaten();
+
+});
