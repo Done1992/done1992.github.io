@@ -5,77 +5,43 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PC Konfigurator</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link rel="stylesheet" href="konfigurator-style.css" />
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="Fuego Electronics Logo">
-    <nav>
-      <a href="../index.html">Start</a>
-      <a href="../produkte.html">Produkte</a>
-      <a href="../ueber-uns.html">Über uns</a>
-      <a href="../support.html">Support</a>
-      <a href="../kontakt.html">Kontakt</a>
-    </nav>
-  </header>
-  
-  <h1>PC Konfigurator</h1>
-  <form id="konfiguratorForm">
-    <div class="gruppe">
-      <label for="hersteller">Prozessor-Hersteller:</label>
-      <select id="hersteller" name="hersteller"></select>
+  <div class="config-container">
+    <h1>PC Konfigurator</h1>
+    <p>Stelle dir deinen Wunsch-PC zusammen – schnell, einfach & kompatibel.</p>
+
+    <div class="config-section">
+      <label for="hersteller">Prozessor-Hersteller</label>
+      <select id="hersteller">
+        <option value="intel">Intel</option>
+        <option value="amd">AMD</option>
+      </select>
     </div>
-    <div class="gruppe">
-      <label for="cpu">CPU:</label>
-      <select id="cpu" name="cpu"></select>
+
+    <div class="config-section">
+      <label for="cpu">CPU</label>
+      <select id="cpu">
+        <option>Bitte Hersteller wählen</option>
+      </select>
     </div>
-    <div class="gruppe">
-      <label for="mainboard">Mainboard:</label>
-      <select id="mainboard" name="mainboard"></select>
+
+    <div class="config-section">
+      <label for="mainboard">Mainboard</label>
+      <select id="mainboard">
+        <option>Bitte CPU wählen</option>
+      </select>
     </div>
-    <div class="gruppe">
-      <label for="ram">RAM:</label>
-      <select id="ram" name="ram"></select>
-    </div>
-    <div class="gruppe">
-      <label for="nvme">NVMe:</label>
-      <select id="nvme" name="nvme"></select>
-    </div>
-    <div class="gruppe">
-      <label for="gehaeuse">Gehäuse:</label>
-      <select id="gehaeuse" name="gehaeuse"></select>
-    </div>
-    <div class="gruppe">
-      <label for="netzteil">Netzteil:</label>
-      <select id="netzteil" name="netzteil"></select>
-    </div>
-    <div class="gruppe">
-      <label for="grafikkarte">Grafikkarte:</label>
-      <select id="grafikkarte" name="grafikkarte"></select>
-    </div>
-    <div class="gruppe">
-      <label for="luefter">Lüfter:</label>
-      <select id="luefter" name="luefter"></select>
-    </div>
-    <div class="gruppe">
-      <label for="wlan">WLAN-Karte:</label>
-      <select id="wlan" name="wlan"></select>
-    </div>
-    <div class="gruppe">
-      <label for="os">Betriebssystem:</label>
-      <select id="os" name="os"></select>
-    </div>
-    <div class="gruppe">
+
+    <!-- Weitere Sektionen folgen ... -->
+
+    <div class="price-box">
       <strong>Gesamtpreis: <span id="gesamtpreis">0</span> €</strong>
+      <button id="downloadPDF">PDF herunterladen</button>
     </div>
-    <div class="buttons">
-      <button type="button" onclick="downloadPDF()">Konfiguration als PDF</button>
-      <button type="button" onclick="saveConfig()">Speichern</button>
-      <button type="button" onclick="shareConfig()">Teilen</button>
-      <input type="text" id="shareUrl" readonly style="display:none; width: 100%;" />
-    </div>
-  </form>
+  </div>
+
   <script src="konfigurator.js"></script>
 </body>
 </html>
