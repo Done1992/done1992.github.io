@@ -1,192 +1,153 @@
 {
-  "Hersteller": [
-    "Intel",
-    "AMD"
-  ],
-  "CPU": [
+  "artikel": [
     {
-      "name": "Intel Core i5-13400",
-      "hersteller": "Intel"
+      "id": "intel_cpu_1",
+      "typ": "cpu",
+      "hersteller": "Intel",
+      "name": "Intel Core i5-13600K",
+      "preis": 299
     },
     {
+      "id": "intel_cpu_2",
+      "typ": "cpu",
+      "hersteller": "Intel",
       "name": "Intel Core i7-13700K",
-      "hersteller": "Intel"
+      "preis": 429
     },
     {
-      "name": "Intel Core i9-13900K",
-      "hersteller": "Intel"
-    },
-    {
+      "id": "amd_cpu_1",
+      "typ": "cpu",
+      "hersteller": "AMD",
       "name": "AMD Ryzen 5 7600X",
-      "hersteller": "AMD"
+      "preis": 249
     },
     {
-      "name": "AMD Ryzen 7 7800X3D",
-      "hersteller": "AMD"
+      "id": "amd_cpu_2",
+      "typ": "cpu",
+      "hersteller": "AMD",
+      "name": "AMD Ryzen 7 7700X",
+      "preis": 349
+    },
+
+    {
+      "id": "mb_intel_1",
+      "typ": "mainboard",
+      "hersteller": "ASUS",
+      "name": "ASUS ROG STRIX Z790-F",
+      "preis": 289,
+      "kompatibel_mit": ["Intel Core i5-13600K", "Intel Core i7-13700K"]
     },
     {
-      "name": "AMD Ryzen 9 7950X",
-      "hersteller": "AMD"
-    }
-  ],
-  "Mainboard": [
+      "id": "mb_amd_1",
+      "typ": "mainboard",
+      "hersteller": "MSI",
+      "name": "MSI B650 Tomahawk",
+      "preis": 189,
+      "kompatibel_mit": ["AMD Ryzen 5 7600X", "AMD Ryzen 7 7700X"]
+    },
+
     {
-      "name": "ASUS PRIME Z790-P",
-      "hersteller": "Intel"
+      "id": "ram_1",
+      "typ": "ram",
+      "name": "Corsair Vengeance DDR5 16GB",
+      "preis": 79
     },
     {
-      "name": "MSI PRO B760M-A",
-      "hersteller": "Intel"
+      "id": "ram_2",
+      "typ": "ram",
+      "name": "G.Skill Trident Z5 RGB 32GB",
+      "preis": 139
+    },
+
+    {
+      "id": "nvme_1",
+      "typ": "nvme",
+      "name": "Samsung 980 Pro 1TB",
+      "preis": 119
     },
     {
-      "name": "Gigabyte Z690 AORUS ELITE",
-      "hersteller": "Intel"
+      "id": "nvme_2",
+      "typ": "nvme",
+      "name": "WD Black SN850X 2TB",
+      "preis": 199
+    },
+
+    {
+      "id": "gpu_1",
+      "typ": "gpu",
+      "name": "NVIDIA GeForce RTX 4070",
+      "preis": 599
     },
     {
-      "name": "ASUS ROG STRIX B650E-F",
-      "hersteller": "AMD"
-    },
-    {
-      "name": "MSI MAG B650 TOMAHAWK",
-      "hersteller": "AMD"
-    },
-    {
-      "name": "Gigabyte X670 AORUS PRO",
-      "hersteller": "AMD"
-    }
-  ],
-  "GPU": [
-    {
-      "name": "NVIDIA RTX 4060",
-      "hersteller": "Intel"
-    },
-    {
-      "name": "NVIDIA RTX 4070",
-      "hersteller": "Intel"
-    },
-    {
-      "name": "NVIDIA RTX 4080",
-      "hersteller": "Intel"
-    },
-    {
-      "name": "AMD Radeon RX 7600",
-      "hersteller": "AMD"
-    },
-    {
+      "id": "gpu_2",
+      "typ": "gpu",
       "name": "AMD Radeon RX 7800 XT",
-      "hersteller": "AMD"
+      "preis": 519
     },
+
     {
-      "name": "AMD Radeon RX 7900 XTX",
-      "hersteller": "AMD"
-    }
-  ],
-  "Gehäuse": [
-    {
+      "id": "case_1",
+      "typ": "gehaeuse",
       "name": "be quiet! Pure Base 500DX",
-      "hersteller": "Intel"
+      "preis": 89
     },
     {
-      "name": "Fractal Design Meshify C",
-      "hersteller": "Intel"
+      "id": "case_2",
+      "typ": "gehaeuse",
+      "name": "Fractal Design Meshify 2",
+      "preis": 139
+    },
+
+    {
+      "id": "psu_1",
+      "typ": "netzteil",
+      "name": "Corsair RM750x 750W",
+      "preis": 119
     },
     {
-      "name": "NZXT H510",
-      "hersteller": "Intel"
+      "id": "psu_2",
+      "typ": "netzteil",
+      "name": "be quiet! Straight Power 11 850W",
+      "preis": 139
+    },
+
+    {
+      "id": "fan_1",
+      "typ": "luefter",
+      "name": "Noctua NF-A12x25",
+      "preis": 29
     },
     {
-      "name": "Lian Li LANCOOL 216",
-      "hersteller": "AMD"
+      "id": "fan_2",
+      "typ": "luefter",
+      "name": "Arctic P12 PWM PST",
+      "preis": 9
+    },
+
+    {
+      "id": "os_1",
+      "typ": "os",
+      "name": "Windows 11 Home",
+      "preis": 109
     },
     {
-      "name": "Corsair 4000D Airflow",
-      "hersteller": "AMD"
+      "id": "os_2",
+      "typ": "os",
+      "name": "Windows 11 Pro",
+      "preis": 149
+    },
+
+    {
+      "id": "wlan_1",
+      "typ": "wlan",
+      "name": "TP-Link Archer T6E PCIe WLAN",
+      "preis": 39
     },
     {
-      "name": "Phanteks Eclipse G360A",
-      "hersteller": "AMD"
+      "id": "wlan_2",
+      "typ": "wlan",
+      "name": "ASUS PCE-AX58BT WLAN + Bluetooth",
+      "preis": 59
     }
-  ],
-  "Netzteil": [
-    {
-      "name": "be quiet! Pure Power 11 650W",
-      "hersteller": "Intel"
-    },
-    {
-      "name": "Corsair RM750x",
-      "hersteller": "Intel"
-    },
-    {
-      "name": "Seasonic Focus GX-750",
-      "hersteller": "Intel"
-    },
-    {
-      "name": "be quiet! Straight Power 11 750W",
-      "hersteller": "AMD"
-    },
-    {
-      "name": "Corsair RM850x",
-      "hersteller": "AMD"
-    },
-    {
-      "name": "Seasonic Vertex GX-850",
-      "hersteller": "AMD"
-    }
-  ],
-  "RAM": [
-    "16GB DDR5-6000",
-    "32GB DDR5-6000",
-    "64GB DDR5-5600",
-    "32GB DDR4-3600"
-  ],
-  "NVMe": [
-    "1TB Samsung 980 Pro",
-    "2TB WD Black SN850X",
-    "1TB Kingston KC3000",
-    "2TB Crucial P5 Plus"
-  ],
-  "Laufwerk": [
-    "Keines",
-    "DVD-Brenner",
-    "Blu-ray-Laufwerk"
-  ],
-  "WLAN-Karte": [
-    "Onboard",
-    "TP-Link AX3000",
-    "Intel Wi-Fi 6 AX200"
-  ],
-  "Betriebssystem": [
-    "Windows 11 Home",
-    "Windows 11 Pro",
-    "Ohne Betriebssystem"
-  ],
-  "Lüfter": [
-    "3x Arctic F12",
-    "2x be quiet! Silent Wings 4",
-    "3x Noctua NF-A14"
-  ],
-  "Soundkarte": [
-    "Onboard",
-    "Creative Sound Blaster Z",
-    "ASUS Xonar SE"
-  ],
-  "Capture Card": [
-    "Keine",
-    "Elgato HD60 X",
-    "AVerMedia Live Gamer"
-  ],
-  "TV-Karte": [
-    "Keine",
-    "Digital Devices Cine C2/T2"
-  ],
-  "RGB-Beleuchtung": [
-    "Keine",
-    "Corsair iCUE Kit",
-    "NZXT RGB Kit"
-  ],
-  "Extra PCIe-Karte": [
-    "USB 3.2 Erweiterung",
-    "10Gbit LAN Karte",
-    "Keine"
   ]
 }
