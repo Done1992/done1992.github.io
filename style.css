@@ -1,45 +1,84 @@
-/* Grundlegende Farben und Schriftarten */
+
+/* Apple-inspirierter Stil für PC-Konfigurator */
+
 :root {
   --primary-color: #007aff;
-  --background-color: #f9f9f9;
+  --secondary-color: #e5e5ea;
+  --background-color: #f2f2f7;
   --text-color: #1c1c1e;
-  --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --card-color: #ffffff;
+  --border-radius: 12px;
+  --shadow: 0 4px 16px rgba(0,0,0,0.1);
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* Allgemeine Stile */
 body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-  font-family: var(--font-family);
   margin: 0;
   padding: 0;
+  background-color: var(--background-color);
+  font-family: var(--font);
+  color: var(--text-color);
 }
 
-/* Navigation */
-nav {
-  background-color: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
-  padding: 1rem;
+h1 {
+  text-align: center;
+  font-weight: 600;
+  margin: 1rem 0;
 }
 
-nav a {
-  color: var(--primary-color);
-  margin-right: 1rem;
-  text-decoration: none;
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  background-color: var(--card-color);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
   font-weight: 500;
 }
 
-/* Buttons */
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--secondary-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  background-color: #fff;
+}
+
+select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.3);
+}
+
 button {
   background-color: var(--primary-color);
-  color: #ffffff;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #005bb5;
+  background-color: #0051c6;
+}
+
+#gesamtpreis {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 2rem;
 }
