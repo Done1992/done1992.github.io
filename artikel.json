@@ -1,158 +1,122 @@
 {
-  "hersteller": [
-    {
-      "name": "Intel",
-      "preis": 0
-    },
-    {
-      "name": "AMD",
-      "preis": 0
-    }
+  "Hersteller": [
+    "Intel",
+    "AMD"
   ],
-  "cpu": [
-    {
-      "name": "Intel Core i5-13600K",
-      "preis": 260,
-      "hersteller": "Intel",
-      "sockel": "LGA1700",
-      "ramTyp": "DDR5"
-    },
-    {
-      "name": "Intel Core i7-14700K",
-      "preis": 390,
-      "hersteller": "Intel",
-      "sockel": "LGA1700",
-      "ramTyp": "DDR5"
-    },
-    {
-      "name": "AMD Ryzen 5 7600",
-      "preis": 220,
-      "hersteller": "AMD",
-      "sockel": "AM5",
-      "ramTyp": "DDR5"
-    },
-    {
-      "name": "AMD Ryzen 7 7800X3D",
-      "preis": 420,
-      "hersteller": "AMD",
-      "sockel": "AM5",
-      "ramTyp": "DDR5"
-    }
+  "CPU": {
+    "Intel": [
+      "Intel Core i5-13400",
+      "Intel Core i7-13700K",
+      "Intel Core i9-13900K"
+    ],
+    "AMD": [
+      "AMD Ryzen 5 7600X",
+      "AMD Ryzen 7 7800X3D",
+      "AMD Ryzen 9 7950X"
+    ]
+  },
+  "Mainboard": {
+    "Intel": [
+      "ASUS PRIME Z790-P",
+      "MSI PRO B760M-A",
+      "Gigabyte Z690 AORUS ELITE"
+    ],
+    "AMD": [
+      "ASUS ROG STRIX B650E-F",
+      "MSI MAG B650 TOMAHAWK",
+      "Gigabyte X670 AORUS PRO"
+    ]
+  },
+  "RAM": [
+    "16GB DDR5-6000",
+    "32GB DDR5-6000",
+    "64GB DDR5-5600",
+    "32GB DDR4-3600"
   ],
-  "mainboard": [
-    {
-      "name": "ASUS ROG Strix B650-A (AM5, DDR5)",
-      "preis": 210,
-      "sockel": "AM5",
-      "ramTyp": "DDR5"
-    },
-    {
-      "name": "MSI PRO B650M-P (AM5, DDR5)",
-      "preis": 140,
-      "sockel": "AM5",
-      "ramTyp": "DDR5"
-    },
-    {
-      "name": "ASUS Prime Z790-P (LGA1700, DDR5)",
-      "preis": 200,
-      "sockel": "LGA1700",
-      "ramTyp": "DDR5"
-    },
-    {
-      "name": "Gigabyte Z790 AORUS Elite (LGA1700, DDR5)",
-      "preis": 220,
-      "sockel": "LGA1700",
-      "ramTyp": "DDR5"
-    }
+  "NVMe": [
+    "1TB Samsung 980 Pro",
+    "2TB WD Black SN850X",
+    "1TB Kingston KC3000",
+    "2TB Crucial P5 Plus"
   ],
-  "ram": [
-    {
-      "name": "16GB DDR5-6000",
-      "preis": 75,
-      "ramTyp": "DDR5"
-    },
-    {
-      "name": "32GB DDR5-6000",
-      "preis": 130,
-      "ramTyp": "DDR5"
-    }
+  "GPU": {
+    "Intel": [
+      "NVIDIA RTX 4060",
+      "NVIDIA RTX 4070",
+      "NVIDIA RTX 4080"
+    ],
+    "AMD": [
+      "AMD Radeon RX 7600",
+      "AMD Radeon RX 7800 XT",
+      "AMD Radeon RX 7900 XTX"
+    ]
+  },
+  "Gehäuse": {
+    "Intel": [
+      "be quiet! Pure Base 500DX",
+      "Fractal Design Meshify C",
+      "NZXT H510"
+    ],
+    "AMD": [
+      "Lian Li LANCOOL 216",
+      "Corsair 4000D Airflow",
+      "Phanteks Eclipse G360A"
+    ]
+  },
+  "Netzteil": {
+    "Intel": [
+      "be quiet! Pure Power 11 650W",
+      "Corsair RM750x",
+      "Seasonic Focus GX-750"
+    ],
+    "AMD": [
+      "be quiet! Straight Power 11 750W",
+      "Corsair RM850x",
+      "Seasonic Vertex GX-850"
+    ]
+  },
+  "Laufwerk": [
+    "Keines",
+    "DVD-Brenner",
+    "Blu-ray-Laufwerk"
   ],
-  "nvme": [
-    {
-      "name": "1TB Samsung 980 Pro",
-      "preis": 90
-    },
-    {
-      "name": "2TB Crucial P5 Plus",
-      "preis": 140
-    }
+  "WLAN-Karte": [
+    "Onboard",
+    "TP-Link AX3000",
+    "Intel Wi-Fi 6 AX200"
   ],
-  "gehaeuse": [
-    {
-      "name": "be quiet! Pure Base 500DX",
-      "preis": 95
-    },
-    {
-      "name": "Fractal Design Meshify C",
-      "preis": 99
-    }
+  "Betriebssystem": [
+    "Windows 11 Home",
+    "Windows 11 Pro",
+    "Ohne Betriebssystem"
   ],
-  "netzteil": [
-    {
-      "name": "be quiet! Pure Power 12M 750W",
-      "preis": 110
-    },
-    {
-      "name": "Corsair RM850e 850W",
-      "preis": 125
-    }
+  "Lüfter": [
+    "3x Arctic F12",
+    "2x be quiet! Silent Wings 4",
+    "3x Noctua NF-A14"
   ],
-  "grafikkarte": [
-    {
-      "name": "NVIDIA GeForce RTX 4060 Ti",
-      "preis": 380
-    },
-    {
-      "name": "AMD Radeon RX 7800 XT",
-      "preis": 500
-    },
-    {
-      "name": "Keine Grafikkarte (nur iGPU)",
-      "preis": 0
-    }
+  "Soundkarte": [
+    "Onboard",
+    "Creative Sound Blaster Z",
+    "ASUS Xonar SE"
   ],
-  "luefter": [
-    {
-      "name": "ARCTIC Freezer 34 eSports",
-      "preis": 35
-    },
-    {
-      "name": "be quiet! Dark Rock 4",
-      "preis": 70
-    }
+  "Capture Card": [
+    "Keine",
+    "Elgato HD60 X",
+    "AVerMedia Live Gamer"
   ],
-  "wlan": [
-    {
-      "name": "Intel Wi-Fi 6 AX200",
-      "preis": 35
-    },
-    {
-      "name": "Kein WLAN",
-      "preis": 0
-    }
+  "TV-Karte": [
+    "Keine",
+    "Digital Devices Cine C2/T2"
   ],
-  "os": [
-    {
-      "name": "Windows 11 Home",
-      "preis": 120
-    },
-    {
-      "name": "Windows 11 Pro",
-      "preis": 150
-    },
-    {
-      "name": "Kein Betriebssystem",
-      "preis": 0
-    }
+  "RGB-Beleuchtung": [
+    "Keine",
+    "Corsair iCUE Kit",
+    "NZXT RGB Kit"
+  ],
+  "Extra PCIe-Karte": [
+    "USB 3.2 Erweiterung",
+    "10Gbit LAN Karte",
+    "Keine"
   ]
 }
