@@ -1,9 +1,9 @@
 {
-  "prozessorHersteller": [
+  "Hersteller": [
     "Intel",
     "AMD"
   ],
-  "cpu": [
+  "CPU": [
     {
       "name": "Intel Core i5-13400",
       "hersteller": "Intel"
@@ -29,7 +29,7 @@
       "hersteller": "AMD"
     }
   ],
-  "mainboard": [
+  "Mainboard": [
     {
       "name": "ASUS PRIME Z790-P",
       "hersteller": "Intel"
@@ -55,7 +55,7 @@
       "hersteller": "AMD"
     }
   ],
-  "grafikkarte": [
+  "GPU": [
     {
       "name": "NVIDIA RTX 4060",
       "hersteller": "Intel"
@@ -81,7 +81,7 @@
       "hersteller": "AMD"
     }
   ],
-  "gehäuse": [
+  "Gehäuse": [
     {
       "name": "be quiet! Pure Base 500DX",
       "hersteller": "Intel"
@@ -107,7 +107,7 @@
       "hersteller": "AMD"
     }
   ],
-  "netzteil": [
+  "Netzteil": [
     {
       "name": "be quiet! Pure Power 11 650W",
       "hersteller": "Intel"
@@ -133,13 +133,13 @@
       "hersteller": "AMD"
     }
   ],
-  "ram": [
+  "RAM": [
     "16GB DDR5-6000",
     "32GB DDR5-6000",
     "64GB DDR5-5600",
     "32GB DDR4-3600"
   ],
-  "nvme": [
+  "NVMe": [
     "1TB Samsung 980 Pro",
     "2TB WD Black SN850X",
     "1TB Kingston KC3000",
@@ -150,17 +150,17 @@
     "DVD-Brenner",
     "Blu-ray-Laufwerk"
   ],
-  "wlan": [
+  "WLAN-Karte": [
     "Onboard",
     "TP-Link AX3000",
     "Intel Wi-Fi 6 AX200"
   ],
-  "betriebssystem": [
+  "Betriebssystem": [
     "Windows 11 Home",
     "Windows 11 Pro",
     "Ohne Betriebssystem"
   ],
-  "lüfter": [
+  "Lüfter": [
     "3x Arctic F12",
     "2x be quiet! Silent Wings 4",
     "3x Noctua NF-A14"
