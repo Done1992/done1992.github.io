@@ -1,53 +1,48 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PC Konfigurator</title>
-    <link rel="stylesheet" href="konfigurator-style.css" />
-    <link rel="stylesheet" href="general-style.css" />
-    <script defer src="configurator.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PC Konfigurator</title>
+  <link rel="stylesheet" href="konfigurator-style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-      <header>
-    <img src="logo.png" alt="Fuego Electronics Logo">
-    <nav>
-      <a href="../index.html">Start</a>
-      <a href="../produkte.html">Produkte</a>
-      <a href="../ueber-uns.html">Über uns</a>
-      <a href="../support.html">Support</a>
-      <a href="../kontakt.html">Kontakt</a>
-    </nav>
-  </header>
+  <h1>PC Konfigurator</h1>
+  <form id="configForm">
+    <label for="cpu">CPU:</label>
+    <select id="cpu">
+      <option value="ryzen5800x" data-price="299.99">Ryzen 7 5800X – 299,99 €</option>
+      <option value="i7" data-price="319.99">Intel Core i7-12700K – 319,99 €</option>
+    </select>
 
-    <main>
-        <form id="pc-form">
-                    <h2>PC Konfigurator</h2>
-            <div class="form-group">
-                <label for="hersteller">Prozessorhersteller</label>
-                <select id="hersteller" name="hersteller"></select>
-            </div>
-            <div class="form-group">
-                <label for="cpu">CPU</label>
-                <select id="cpu" name="cpu"></select>
-            </div>
-            <div class="form-group">
-                <label for="mainboard">Mainboard</label>
-                <select id="mainboard" name="mainboard"></select>
-            </div>
-            <div class="form-group">
-                <label for="ram">RAM</label>
-                <select id="ram" name="ram"></select>
-            </div>
-            <div class="form-group">
-                <label for="nvme">NVMe</label>
-                <select id="nvme" name="nvme"></select>
-            </div>
-            <div class="form-group">
-                <label for="grafikkarte">Grafikkarte</label>
-                <select id="grafikkarte" name="grafikkarte"></select>
-            </div>
-        </form>
-    </main>
+    <label for="mainboard">Mainboard:</label>
+    <select id="mainboard">
+      <option value="b550" data-price="159.99">MSI B550 Tomahawk – 159,99 €</option>
+      <option value="z690" data-price="189.99">ASUS Z690-A – 189,99 €</option>
+    </select>
+
+    <label for="ram">RAM:</label>
+    <select id="ram">
+      <option value="16gb" data-price="69.99">16 GB DDR4 – 69,99 €</option>
+      <option value="32gb" data-price="119.99">32 GB DDR4 – 119,99 €</option>
+    </select>
+
+    <label for="nvme">NVMe:</label>
+    <select id="nvme">
+      <option value="1tb" data-price="109.99">1 TB Samsung 980 – 109,99 €</option>
+      <option value="2tb" data-price="199.99">2 TB Samsung 990 – 199,99 €</option>
+    </select>
+
+    <label for="gpu">Grafikkarte:</label>
+    <select id="gpu">
+      <option value="4070" data-price="599.99">RTX 4070 – 599,99 €</option>
+      <option value="7800xt" data-price="549.99">Radeon RX 7800 XT – 549,99 €</option>
+    </select>
+  </form>
+
+  <button id="pdfDownloadBtn">PDF herunterladen</button>
+
+  <script src="configurator.js"></script>
 </body>
 </html>

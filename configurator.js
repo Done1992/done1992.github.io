@@ -1,64 +1,32 @@
-document.addEventListener("DOMContentLoaded", () => {
-    fetch("artikel.json")
-        .then(response => response.json())
-        .then(data => {
-            const herstellerSelect = document.getElementById("hersteller");
-            const cpuSelect = document.getElementById("cpu");
-            const mainboardSelect = document.getElementById("mainboard");
-            const ramSelect = document.getElementById("ram");
-            const nvmeSelect = document.getElementById("nvme");
-            const grafikkarteSelect = document.getElementById("grafikkarte");
+document.getElementById("pdfDownloadBtn").addEventListener("click", async () => {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
 
-            const kategorien = {
-                hersteller: new Set(),
-                cpu: [],
-                mainboard: [],
-                ram: [],
-                nvme: [],
-                grafikkarte: []
-            };
+  let y = 10;
+  doc.setFont("Helvetica", "bold");
+  doc.setFontSize(14);
+  doc.text("PC-Konfiguration", 105, y, { align: "center" });
+  y += 10;
 
-            data.forEach(artikel => {
-                if (artikel.kategorie === "hersteller") {
-                    kategorien.hersteller.add(artikel.name);
-                } else if (kategorien[artikel.kategorie]) {
-                    kategorien[artikel.kategorie].push(artikel);
-                }
-            });
+  doc.setFont("Helvetica", "normal");
+  doc.setFontSize(11);
 
-            kategorien.hersteller.forEach(h => {
-                herstellerSelect.innerHTML += `<option value="${h}">${h}</option>`;
-            });
+  let total = 0;
+  const selections = document.querySelectorAll("select");
+  selections.forEach(select => {
+    const label = document.querySelector(`label[for='${select.id}']`);
+    const name = label ? label.textContent : select.id;
+    const value = select.options[select.selectedIndex].text;
+    doc.text(`${name}: ${value}`, 10, y);
+    y += 8;
 
-            herstellerSelect.addEventListener("change", () => {
-                const selected = herstellerSelect.value;
-                cpuSelect.innerHTML = "<option value=''>Bitte wählen</option>";
-                kategorien.cpu
-                    .filter(cpu => cpu.hersteller === selected)
-                    .forEach(cpu => {
-                        cpuSelect.innerHTML += `<option value="${cpu.name}">${cpu.name}</option>`;
-                    });
-            });
+    const priceAttr = select.options[select.selectedIndex].getAttribute("data-price");
+    if (priceAttr) total += parseFloat(priceAttr);
+  });
 
-            cpuSelect.addEventListener("change", () => {
-                const selectedCPU = cpuSelect.value;
-                mainboardSelect.innerHTML = "<option value=''>Bitte wählen</option>";
-                const cpuData = kategorien.cpu.find(cpu => cpu.name === selectedCPU);
-                if (cpuData) {
-                    kategorien.mainboard
-                        .filter(board => board.kompatibel_mit.includes(cpuData.socket))
-                        .forEach(board => {
-                            mainboardSelect.innerHTML += `<option value="${board.name}">${board.name}</option>`;
-                        });
-                }
-            });
+  y += 5;
+  doc.setFont("Helvetica", "bold");
+  doc.text(`Gesamtpreis: ${total.toFixed(2)} EUR`, 10, y);
 
-            ["ram", "nvme", "grafikkarte"].forEach(kat => {
-                const select = document.getElementById(kat);
-                kategorien[kat].forEach(item => {
-                    select.innerHTML += `<option value="${item.name}">${item.name}</option>`;
-                });
-            });
-        })
-        .catch(err => console.error("Fehler beim Laden der Daten:", err));
+  doc.save("pc-konfiguration.pdf");
 });
