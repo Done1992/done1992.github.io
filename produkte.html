@@ -8,7 +8,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-  <h1>PC Konfigurator</h1>
+    <header>
+    <img src="logo.png" alt="Fuego Electronics Logo">
+    <nav>
+      <a href="../index.html">Start</a>
+      <a href="../produkte.html">Produkte</a>
+      <a href="../ueber-uns.html">Über uns</a>
+      <a href="../support.html">Support</a>
+      <a href="../kontakt.html">Kontakt</a>
+    </nav>
+  </header>
+   <div class="about-container">
+  <h2>PC Konfigurator</h2>
   <form id="configForm">
     <label for="cpu">CPU:</label>
     <select id="cpu">
@@ -42,7 +53,7 @@
   </form>
 
   <button id="pdfDownloadBtn">PDF herunterladen</button>
-
+   </div>
   <script src="configurator.js"></script>
 </body>
 </html>
