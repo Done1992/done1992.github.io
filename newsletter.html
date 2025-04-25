@@ -1,1 +1,67 @@
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fuego Electronics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="general-style.css">
+        <link rel="stylesheet" href="about-style.css">
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Fuego Electronics Logo">
+    <nav>
+      <a href="../index.html">Start</a>
+      <a href="../produkte.html">Produkte</a>
+      <a href="../ueber-uns.html">Über uns</a>
+      <a href="../support.html">Support</a>
+      <a href="../kontakt.html">Kontakt</a>
+    </nav>
+  </header>
+
+    <div class="about-container">
+<!-- Newsletter Formular Start -->
+<div class="newsletter-form">
+  <h3>Newsletter abonnieren</h3>
+  <input type="email" id="newsletter-email" placeholder="Deine E-Mail-Adresse">
+  <button onclick="subscribeToNewsletter()">Anmelden</button>
+  <div id="newsletter-message"></div>
+</div>
+
+<script>
+  async function subscribeToNewsletter() {
+    const email = document.getElementById('newsletter-email').value;
+    const msg = document.getElementById('newsletter-message');
+
+    try {
+      const res = await fetch('https://DEINE-LISTMONK-URL/api/subscribers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: email,
+          name: '',
+          status: 'enabled',
+          lists: [1] // Liste-ID hier eintragen
+        })
+      });
+
+      if (res.ok) {
+        msg.innerHTML = '✅ Danke für deine Anmeldung!';
+      } else {
+        const err = await res.json();
+        msg.innerHTML = `❌ Fehler: ${err.error || 'Unbekannter Fehler'}`;
+      }
+    } catch (error) {
+      msg.innerHTML = '❌ Netzwerkfehler. Bitte später erneut versuchen.';
+    }
+  }
+</script>
+<!-- Newsletter Formular Ende -->
+    </div>
+  <footer>
+    &copy; 2025 Fuego Electronics. Alle Rechte vorbehalten.
+  </footer>
+</body>
+</html>
